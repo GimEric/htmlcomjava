@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Validação de Formulário</title>
+</head>
+<body>
+    <form id="meuFormulario">
+        <label for="campoA">Campo A:</label>
+        <input type="number" id="campoA" name="campoA" required>
+
+        <br>
+
+        <label for="campoB">Campo B:</label>
+        <input type="number" id="campoB" name="campoB" required>
+
+        <br>
+
+        <button type="button" onclick="validarFormulario()">Submeter</button>
+    </form>
+
+    <div id="mensagem"></div>
+
+    <script>
+        function validarFormulario() {
+            // Obter os valores dos campos A e B
+            var valorA = parseFloat(document.getElementById("campoA").value);
+            var valorB = parseFloat(document.getElementById("campoB").value);
+
+            // Verificar se B é maior que A
+            if (valorB > valorA) {
+                document.getElementById("mensagem").textContent = "Formulário válido. B é maior que A.";
+            } else {
+                document.getElementById("mensagem").textContent = "Formulário inválido. B deve ser maior que A.";
+            }
+        }
+    </script>
+</body>
+</html>
